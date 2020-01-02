@@ -3,3 +3,20 @@ jdbc:
   url: jdbc:mysql://localhost:3306/springboot?characterEncoding=utf-8
   username: root
   password: root
+  arrayPros: 1,2,3,4 #数组
+  listPros: #list
+  - listvalue1
+  - listvalue2
+  mapPros: #map
+    mapkey1: mapvalue1
+    mapkey2: mapvalue2
+  listMapPros:  #list<map>
+  - listmap1key1: listmap1value1
+    listmap1key2: listmap1value2
+  - listmap2key1: listmap2value1
+    listmap2key22: listmap2value2
+
+  spring:
+    mvc:
+      servlet:
+        load-on-startup: 1
