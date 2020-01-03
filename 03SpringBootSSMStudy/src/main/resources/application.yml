@@ -9,3 +9,4 @@ spring:
 logging:
   level:
     com.qiangssvip: info
+  path: "D:/test/"
