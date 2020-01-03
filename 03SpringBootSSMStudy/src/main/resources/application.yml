@@ -1,5 +1,5 @@
 server:
-  port: 8081
+  port: 80
 
 spring:
   mvc:
@@ -8,5 +8,5 @@ spring:
 
 logging:
   level:
-    com.qiangssvip: info
+    com.qiangssvip: debug
   path: "D:/test/"
