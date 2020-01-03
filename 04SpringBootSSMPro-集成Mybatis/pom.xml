@@ -4,9 +4,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.qiangssvip</groupId>
-    <artifactId>03SpringBootSSMStudy</artifactId>
+    <groupId>com.itlike</groupId>
+    <artifactId>03SpringBootSSMPro</artifactId>
     <version>1.0.0</version>
+
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -25,7 +26,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jdbc</artifactId>
         </dependency>
-        <!--mysql驱动-->
+        <!--mysql-->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
@@ -60,7 +61,7 @@
             <artifactId>lombok</artifactId>
         </dependency>
 
-    </dependencies>
 
+    </dependencies>
 
 </project>
