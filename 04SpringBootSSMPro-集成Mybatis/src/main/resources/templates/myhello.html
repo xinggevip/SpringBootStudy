@@ -113,5 +113,9 @@
     <p th:text="${#request.getAttribute('name')}"></p>
     <p th:text="${#strings.toUpperCase(name)}"></p>
     <p th:text="${#strings.abbreviate(name,10)}"></p>
+    <!-- 布局 -->
+    <div th:insert="~{base::header}"></div>
+    <h1>中部</h1>
+    <div th:insert="~{base::#footer}"></div>
 </body>
 </html>
