@@ -33,5 +33,12 @@
     <p>
         <a th:href="@{/hello(id=1,action='gx')}">跳转传参</a>
     </p>
+    <hr>
+    <p th:text="${'hello' + hero.username}"></p>
+    <p th:text="${1+2}"></p>
+    <p th:text="${true}"></p>
+    <p th:text="${true == false}"></p>
+    <p th:text="'Hello' + ${hero.username}"></p>
+    <p th:text="|哈罗${hero.username}|"></p>
 </body>
 </html>
