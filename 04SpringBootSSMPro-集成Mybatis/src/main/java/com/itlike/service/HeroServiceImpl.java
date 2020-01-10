@@ -14,6 +14,8 @@ public class HeroServiceImpl implements HeroService {
 
     @Override
     public List<Hero> getAllHero() {
+        List<Hero> heroes = heroMapper.selectAll();
+        System.out.println(heroes);
         return heroMapper.getAllHero();
     }
 }
