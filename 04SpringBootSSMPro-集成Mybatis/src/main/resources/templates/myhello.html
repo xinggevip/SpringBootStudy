@@ -108,5 +108,10 @@
             <span th:text="${stat.current}"></span> <!--当前遍历出的 对象信息-->
         </p>
     </div>
+    <hr>
+    <!-- 内置对象 -->
+    <p th:text="${#request.getAttribute('name')}"></p>
+    <p th:text="${#strings.toUpperCase(name)}"></p>
+    <p th:text="${#strings.abbreviate(name,10)}"></p>
 </body>
 </html>
