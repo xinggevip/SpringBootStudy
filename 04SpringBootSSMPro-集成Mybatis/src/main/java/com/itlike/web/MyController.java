@@ -31,7 +31,8 @@ public class MyController {
         log.debug("hello info log-debug");
         List<Hero> allHero = heroService.getAllHero();
         System.out.println(allHero);
-        model.addAttribute("name","测试内容");
+        model.addAttribute("allHero",allHero);
+        model.addAttribute("name","<h3>测试内容</h3>");
 
         Hero hero = new Hero();
         hero.setId(1);

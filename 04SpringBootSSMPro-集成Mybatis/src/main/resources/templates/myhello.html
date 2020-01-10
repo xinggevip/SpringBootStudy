@@ -63,5 +63,15 @@
             </li>
         </ul>
     </div>
+    <hr>
+    <!-- 内联写法 -->
+    [[${name}]]     <!-- 输出纯字符串内容 -->
+    [(${name})]     <!-- 解析html标签输出 -->
+    <hr>
+    <!-- 局部变量 -->
+    <div th:with="heroN = ${allHero[0]}">
+        <p th:text="${heroN.username}"></p>
+        <p th:text="${heroN.phone}"></p>
+    </div>
 </body>
 </html>
