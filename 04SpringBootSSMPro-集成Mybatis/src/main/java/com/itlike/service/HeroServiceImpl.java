@@ -11,6 +11,7 @@ public class HeroServiceImpl implements HeroService {
 
     @Autowired
     private HeroMapper heroMapper;
+    private List<Hero> heroes;
 
     @Override
     public List<Hero> getAllHero() {
