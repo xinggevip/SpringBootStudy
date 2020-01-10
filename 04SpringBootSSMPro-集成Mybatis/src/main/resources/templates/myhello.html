@@ -84,5 +84,29 @@
         <p th:case="'123'">123</p>
         <p th:case="*">都不是</p>
     </div>
+    <!-- 迭代 -->
+    <div>
+    <p th:each="heroItem:${allHero}">
+        <span th:text="${heroItem.username}"></span>
+        <span th:text="${heroItem.phone}"></span>
+        <span th:text="${#dates.format(heroItem.onlinetime,'yyyy-MM-dd')}"></span>
+    </p>
+    </div>
+    <hr>
+    <div>
+        <p th:each="heroItem,stat:${allHero}">
+            <span th:text="${heroItem.username}"></span>
+            <span th:text="${heroItem.phone}"></span>
+            <span th:text="${stat.index}"></span> <!--当前遍历的角标 从0开始-->
+            <span th:text="${stat.count}"></span> <!--当前遍历到第几个 从1开始-->
+            <span th:text="${stat.size}"></span> <!--元素的总数-->
+            <span th:text="${stat.first}"></span> <!--判断当前是否为第1个元素 是 返回true-->
+            <span th:text="${stat.last}"></span> <!--判断当前是否为最后1个元素 是 返回true-->
+            <span th:text="${stat.even}"></span> <!--判断当前行是否为偶数行  如果是 true-->
+            <span th:text="${stat.odd}"></span> <!--判断当前行是否为奇数行  如果是 true-->
+            <span th:text="${stat.odd}"></span> <!--判断当前行是否为奇数行  如果是 true-->
+            <span th:text="${stat.current}"></span> <!--当前遍历出的 对象信息-->
+        </p>
+    </div>
 </body>
 </html>
