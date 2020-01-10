@@ -6,5 +6,23 @@
 </head>
 <body>
     <h1 th:text="${name}">MyHello</h1>
+    <hr>
+    <p>
+        <ul>
+            <li th:text="${hero.id}"></li>
+            <li th:text="${hero.username}"></li>
+            <li th:text="${hero.phone}"></li>
+            <li th:text="${hero.email}"></li>
+        </ul>
+    </p>
+    <hr>
+    <p>
+        <ul th:object="${hero}">
+            <li th:text="*{id}"></li>
+            <li th:text="*{username}"></li>
+            <li th:text="*{phone}"></li>
+            <li th:text="*{email}"></li>
+        </ul>
+    </p>
 </body>
 </html>

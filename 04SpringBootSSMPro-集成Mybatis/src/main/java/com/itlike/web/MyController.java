@@ -33,6 +33,14 @@ public class MyController {
         System.out.println(allHero);
         model.addAttribute("name","测试内容");
 
+        Hero hero = new Hero();
+        hero.setId(1);
+        hero.setUsername("gx");
+        hero.setPhone("10086");
+        hero.setEmail("10086@qq.com");
+
+        model.addAttribute("hero",hero);
+
         return "myhello";
     }
 }
