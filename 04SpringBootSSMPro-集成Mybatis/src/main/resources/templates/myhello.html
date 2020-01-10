@@ -73,5 +73,16 @@
         <p th:text="${heroN.username}"></p>
         <p th:text="${heroN.phone}"></p>
     </div>
+    <hr>
+    <!-- if -->
+    <p th:if="${true}">满足条件才显示</p>
+    <!-- unless -->
+    <p th:unless="${false}">不满足条件时才显示</p>
+    <!-- switch -->
+    <div th:switch="${hero.username}">
+        <p th:case="'gx'">名字[[${hero.username}]]</p>
+        <p th:case="'123'">123</p>
+        <p th:case="*">都不是</p>
+    </div>
 </body>
 </html>
