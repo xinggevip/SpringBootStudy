@@ -24,5 +24,14 @@
             <li th:text="*{email}"></li>
         </ul>
     </p>
+    <hr>
+    <p>
+        <a th:href="@{http://qiangssvip.com}">博客</a>
+        <img th:src="@{/logo.png}">
+    </p>
+    <hr>
+    <p>
+        <a th:href="@{/hello(id=1,action='gx')}">跳转传参</a>
+    </p>
 </body>
 </html>
