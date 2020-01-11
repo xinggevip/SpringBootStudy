@@ -109,13 +109,16 @@
         </p>
     </div>
     <hr>
+    <!-- th:insert 将公共的标签及内容插入到指定标签当中 -->
+    <!-- th:replace 将公共的标签替换指定的标签 -->
+    <!-- th:include 将公共标签的内容包含到指定标签当中 -->
     <!-- 内置对象 -->
     <p th:text="${#request.getAttribute('name')}"></p>
     <p th:text="${#strings.toUpperCase(name)}"></p>
     <p th:text="${#strings.abbreviate(name,10)}"></p>
     <!-- 布局 -->
-    <div th:insert="~{base::header}"></div>
+    <div th:replace="~{base::header}"></div>
     <h1>中部</h1>
-    <div th:insert="~{base::#footer}"></div>
+    <div th:include="~{base::#footer}"></div>
 </body>
 </html>
