@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>MyHello</title>
+    <style>
+        .red{
+            color: red;
+            font-size: 50px;
+        }
+    </style>
 </head>
 <body>
     <h1 th:text="${name}">MyHello</h1>
@@ -119,6 +125,7 @@
     <!-- 布局 -->
     <div th:replace="~{base::header}"></div>
     <h1>中部</h1>
+    <div th:include="~{base::#footer(active='footer')}"></div>
     <div th:include="~{base::#footer}"></div>
 </body>
 </html>
