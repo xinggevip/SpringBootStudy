@@ -14,6 +14,8 @@ spring:
     cache: false
     mode: HTML5
     encoding: UTF-8
+  messages:
+    basename: i18n.login
 
 logging:
   level:

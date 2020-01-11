@@ -22,16 +22,16 @@
                     <span class="input-group-addon">
                         <i class="fa fa-id-card-o"></i>
                     </span>
-                    <input type="text" class="form-control" placeholder="用户名">
+                    <input type="text" class="form-control" th:placeholder="#{login.username}">
                 </div>
                 <div class="input-group input-group-lg">
                     <span class="input-group-addon">
                         <i class="fa fa-key"></i>
                     </span>
-                    <input type="password" class="form-control" placeholder="密码">
+                    <input type="password" class="form-control" th:placeholder="#{login.password}">
                 </div>
 
-                <button type="submit" class="btn btn-lg btn-danger btn-block">登 录</button>
+                <button type="submit" class="btn btn-lg btn-danger btn-block" th:text="#{login.btn}"></button>
                 <a class="language">中文</a>|<a class="language">English</a>
             </form>
         </div>
