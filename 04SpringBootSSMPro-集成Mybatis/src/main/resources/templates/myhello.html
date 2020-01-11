@@ -127,5 +127,11 @@
     <h1>中部</h1>
     <div th:include="~{base::#footer(active='footer')}"></div>
     <div th:include="~{base::#footer}"></div>
+
+    <script th:inline="javascript">
+        // 读取域中的内容
+        var username = /*[[${name}]]*/ "你好，世界";
+        console.log(username);
+    </script>
 </body>
 </html>
