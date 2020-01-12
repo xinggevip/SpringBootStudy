@@ -5,6 +5,8 @@ import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import javax.servlet.http.HttpSession;
+
 @Controller
 public class LoginController {
     /*@RequestMapping("/login")
@@ -13,8 +15,9 @@ public class LoginController {
     }*/
 
     @PostMapping("/userLogin")
-    public String userLogin(String username, String password, Model model){
+    public String userLogin(String username, String password, Model model, HttpSession session){
         if (!StringUtils.isEmpty(username) && "123456".equals(password)){
+            session.setAttribute("user",username);
             // 跳转到主页
             return "redirect:main.html";
         }else{
