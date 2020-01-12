@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>撩课-后台管理系统</title>
@@ -72,12 +72,12 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
+                    <tr th:each="hero:${heroList}">
+                        <td th:text="${hero.username}"></td>
+                        <td th:text="${hero.profession}"></td>
+                        <td th:text="${hero.phone}"></td>
+                        <td th:text="${hero.email}"></td>
+                        <td th:text="${#dates.format(hero.onlinetime,'yyyy-MM-dd')}"></td>
                         <td>
                             <a src="javascript:;" data-toggle="modal" data-target="#lesson" class="btn btn-danger btn-sm">
                                 编辑
