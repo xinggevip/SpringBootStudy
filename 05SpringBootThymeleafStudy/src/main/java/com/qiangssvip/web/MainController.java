@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
@@ -14,6 +15,17 @@ public class MainController {
 
     @Autowired
     private HeroService heroService;
+
+    @GetMapping("/add")
+    public String add(){
+        return "add";
+    }
+
+    @PostMapping("/addHero")
+    public String addHero(Hero hero){
+        heroService.inserrtHero(hero);
+        return "redirect:/main";
+    }
 
     @GetMapping("/main")
     public String main(Model model){

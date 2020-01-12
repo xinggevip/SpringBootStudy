@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface HeroService {
     List<Hero> getAllHero();
+
+    void inserrtHero(Hero hero);
 }
