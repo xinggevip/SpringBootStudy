@@ -5,9 +5,15 @@ import com.qiangssvip.service.HeroService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.beans.PropertyEditorSupport;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -34,5 +40,22 @@ public class MainController {
         model.addAttribute("heroList",allHero);
         System.out.println(allHero);
         return "main";
+    }
+
+    @InitBinder
+    public void InitBinder(WebDataBinder dataBinder)
+    {
+        dataBinder.registerCustomEditor(Date.class, new PropertyEditorSupport() {
+            public void setAsText(String value) {
+                try {
+                    setValue(new SimpleDateFormat("yyyy-MM-dd").parse(value));
+                } catch(ParseException e) {
+                    setValue(null);
+                }
+            }
+            public String getAsText() {
+                return new SimpleDateFormat("yyyy-MM-dd").format((Date) getValue());
+            }
+        });
     }
 }
