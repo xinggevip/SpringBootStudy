@@ -19,7 +19,7 @@ public class LoginController {
         if (!StringUtils.isEmpty(username) && "123456".equals(password)){
             session.setAttribute("user",username);
             // 跳转到主页
-            return "redirect:main.html";
+            return "redirect:main";
         }else{
             // 还跳转到本页面
             model.addAttribute("msg","用户名或密码错误");
