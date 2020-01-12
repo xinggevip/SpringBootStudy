@@ -6,9 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.InitBinder;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.beans.PropertyEditorSupport;
 import java.text.ParseException;
@@ -40,6 +38,21 @@ public class MainController {
         model.addAttribute("heroList",allHero);
         System.out.println(allHero);
         return "main";
+    }
+
+    @GetMapping("/edit/{id}")
+    public String addHero(@PathVariable("id") Integer id, Model model){
+        Hero hero = heroService.getHeroWithId(id);
+        System.out.println(hero);
+        model.addAttribute("hero",hero);
+        return "add";
+    }
+
+    //员工修改；需要提交员工id；
+    @PutMapping("/addHero")
+    public String updateEmployee(Hero hero){
+        heroService.upateHero(hero);
+        return "redirect:/main";
     }
 
     @InitBinder

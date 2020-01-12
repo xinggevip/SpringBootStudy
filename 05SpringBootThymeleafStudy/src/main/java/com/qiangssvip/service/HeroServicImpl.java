@@ -29,4 +29,15 @@ public class HeroServicImpl implements HeroService {
         }
 
     }
+
+    @Override
+    public Hero getHeroWithId(Integer id) {
+        Hero hero = heroMapper.selectByPrimaryKey(id);
+        return hero;
+    }
+
+    @Override
+    public void upateHero(Hero hero) {
+        heroMapper.updateByPrimaryKey(hero);
+    }
 }
