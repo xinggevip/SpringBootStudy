@@ -17,18 +17,18 @@
             <div class="avatar">
                 <img src="./images/logo.jpg" class="img-circle" alt="">
             </div>
-            <form action="" class="col-md-offset-1 col-md-10">
+            <form th:action="@{/userLogin}" method="post" class="col-md-offset-1 col-md-10">
                 <div class="input-group input-group-lg">
                     <span class="input-group-addon">
                         <i class="fa fa-id-card-o"></i>
                     </span>
-                    <input type="text" class="form-control" th:placeholder="#{login.username}">
+                    <input type="text" name="username" class="form-control" th:placeholder="#{login.username}">
                 </div>
                 <div class="input-group input-group-lg">
                     <span class="input-group-addon">
                         <i class="fa fa-key"></i>
                     </span>
-                    <input type="password" class="form-control" th:placeholder="#{login.password}">
+                    <input type="password" name="password" class="form-control" th:placeholder="#{login.password}">
                 </div>
 
                 <button type="submit" class="btn btn-lg btn-danger btn-block" th:text="#{login.btn}"></button>
@@ -36,6 +36,15 @@
             </form>
         </div>
     </div>
+
+    <script th:inline="javascript">
+        // 读取域中的内容
+        var username = /*[[${msg}]]*/ "";
+        if (username != "" && username != null) {
+            alert(username);
+        }
+        console.log(username);
+    </script>
     
 
 </body>
